@@ -57,13 +57,16 @@ function init() {
     });
 }
   
-var dataArray=[];
+
   
 // Book Class: Represents A book
 class BMID {
-  constructor(weight, height,bmi, date) {
-      this.height = height;
-      this.weight = weight;
+  constructor(weight,weightM, height, heightM, bmi,  date) {
+    this.weight = weight;
+    this.weightM = weightM;  
+    this.height = height;
+      this.heightM = heightM;
+    
       this.bmi = bmi;
       this.date= date
 //
@@ -181,12 +184,13 @@ myBarChart.update();
        <br/>
      
           <div class="row point">
-          <div class="col-md-4 pl-4 font-weight-bold point">Height: ${bmi.height}</div>
-          <div class="col-md-4 font-weight-bold  point">Weight: ${bmi.weight}</div>
+          <div class="col-md-4 font-weight-bold  point">Weight: ${bmi.weight}${bmi.weightM}</div>
+          <div class="col-md-4 pl-4 font-weight-bold point">Height: ${bmi.height}${bmi.heightM}</div>
+        
           <div class="col-md-4 font-weight-bold point">${bmi.date}</div></div>
           <div class="row">
           <div class="col-md-3 point"></div>
-            <div class="col-md-6 pointt"><a href="#" class="btn delete ">Erase Data </a> </div>
+            <div class="col-sm-6 text-center pointt"><a href="#" class="btn btn-danger delete ">x </a> </div>
             <div class="col-md-3 point"></div></div>
    </div>
   `;
@@ -286,11 +290,11 @@ class store {
   form.addEventListener('submit', function(e){
   
                  e.preventDefault();
-           const result = document.querySelector('#result')
+        
            const weight = document.getElementById('weight').value;
   const height = document.getElementById('height').value;
-  const y = document.getElementById('select1').value;
-  const z = document.getElementById('select2').value;
+  const weightM = document.getElementById('select1').value;
+  const heightM = document.getElementById('select2').value;
   var date = new Date();
   var dd = String(date.getDate()).padStart(2, '0');
   var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -300,39 +304,39 @@ class store {
   let BMI;
 
   
-  
-  if (JSON.parse(localStorage.getItem("bmis")).some(ch => ch.date === date)) {
-    return  alert("You've added data for this day");
+ 
+  if (JSON.parse(localStorage.getItem("bmis")) !==  null && JSON.parse(localStorage.getItem("bmis")).some(ch => ch.date === date)) {
+    return  alert(`You've entered a metric on ${date} before`);
   }
   else {
-    if (y == "KG" && z=="M"){
+    if (weightM == "Kg" && heightM=="m"){
       BMI = weight/(Math.pow(height, 2))
       console.log(BMI)
       console.log( myBarChart.data.labels)
       }
       
-      else if (y == "KG" && z=="CM"){
+      else if (weightM == "Kg" && heightM=="cm"){
         BMI= [weight/(Math.pow(height, 2))]*10000
       
      
       }
       
-      else if (y == "KG" && z=="Ft"){
+      else if (weightM == "Kg" && heightM=="ft"){
         BMI= weight/(Math.pow((height*0.3048), 2))
       
       }
       
-      else if (y == "lb" && z=="M"){
+      else if (weightM == "lb" && heightM=="m"){
         BMI= (weight/2.20462262)/(Math.pow(height, 2))
       
     
       }
-      else if (y == "lb" && z=="CM"){
+      else if (weightM == "lb" && heightM=="cm"){
         BMI= [(weight/2.20462262)/(Math.pow(height, 2))]*10000
       
     
       }
-      else if (y =="lb" && z=="Ft"){
+      else if (weightM =="lb" && heightM =="ft"){
         BMI = (weight/2.20462262)/(Math.pow((height*0.3048), 2))
       
     
@@ -343,7 +347,7 @@ class store {
   
         // result.textContent =`Your Calculated BMI is: ${BMI}`	
   
-         const Bmi = new BMID (weight, height, BMI, date);
+         const Bmi = new BMID (weight,weightM, height,heightM, BMI, date);
          UI.addToCardList(Bmi)  
          UI.addGraph(Bmi)
          store.addBmi(Bmi)
