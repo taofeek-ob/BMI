@@ -25,8 +25,7 @@ var data = {
         pointHoverBorderWidth: 2,
         pointRadius: 4,
         pointHitRadius: 10,
-        data: [],
-       
+        data: []
     }]
 };
 
