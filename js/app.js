@@ -26,15 +26,15 @@ var data = {
         pointRadius: 4,
         pointHitRadius: 10,
         data: [],
-        spanGaps: true,
+       
     }]
 };
 
 var options = {
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
             }
         }]
     },
