@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>BMI CALCULATOR</title>
+    <title>Test</title>
     <style>
 
     </style>
@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label for="usr">Unit</label>
                         <select class="form-control" id="select1" required>
-	    <option value=""></option>
+	    <option value="">None</option>
         <option>Kg</option>
         <option>lb</option>
        
@@ -138,28 +138,27 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+
     <script src="js/app.js"></script>
-	<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
 
-        $(".form-control").click(function() {
-            $(this).parent().addClass("label-animate");
+            $(".form-control").click(function() {
+                $(this).parent().addClass("label-animate");
+            });
+
+            $(window).click(function() {
+                if (!$(event.target).is('.form-control')) {
+                    $(".form-control").each(function() {
+                        if ($(this).val() == '') {
+                            $(this).parent().removeClass("label-animate");
+                        }
+                    });
+                }
+            });
         });
-
-        $(window).click(function() {
-            if (!$(event.target).is('.form-control')) {
-                $(".form-control").each(function() {
-                    if ($(this).val() == '') {
-                        $(this).parent().removeClass("label-animate");
-                    }
-                });
-            }
-        });
-    });
-</script>
-
+    </script>
 </body>
-	
 
 
 
