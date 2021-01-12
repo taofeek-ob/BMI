@@ -31,6 +31,10 @@
 .social-part .fa {
     padding-right: 50px;
 }
+.social-part a {
+    text-decoration:  none;
+   
+}
 
 ul li a {
     margin-right: 20px;
