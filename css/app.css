@@ -92,7 +92,7 @@ ul li a {
     flex-wrap: wrap;
 }
 
-@media only screen and (max-device-width: 780px) {
+@media only screen and (max-device-width: 480px) {
     /* Styles */
     .framework {
         display: flex;
