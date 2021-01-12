@@ -301,8 +301,8 @@ class store {
 
   
   
-  if (JSON.parse(localStorage.getItem("bmis")).some(ch => ch.date == date)) {
-    return  alert("You've read this book before");
+  if (JSON.parse(localStorage.getItem("bmis")).some(ch => ch.date === date)) {
+    return  alert("You've added data for this day");
   }
   else {
     if (y == "KG" && z=="M"){
