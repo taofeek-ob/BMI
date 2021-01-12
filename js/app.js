@@ -184,13 +184,12 @@ myBarChart.update();
        <br/>
      
           <div class="row point">
-          <div class="col-md-4 font-weight-bold  point">Weight: ${bmi.weight}${bmi.weightM}</div>
-          <div class="col-md-4 pl-4 font-weight-bold point">Height: ${bmi.height}${bmi.heightM}</div>
-        
-          <div class="col-md-4 font-weight-bold point">${bmi.date}</div></div>
+          <div class="col-sm-4 font-weight-bold  point">Weight: ${bmi.weight}${bmi.weightM}</div>
+          <div class="col-sm-4 pl-4 font-weight-bold point">Height: ${bmi.height}${bmi.heightM}</div>
+          <div class="col-sm-4 font-weight-bold point">${bmi.date}</div></div>
           <div class="row">
           <div class="col-md-3 point"></div>
-            <div class="col-sm-6 text-center pointt"><a href="#" class="btn btn-danger delete ">x </a> </div>
+            <div class="col-sm-6 text-center pointt"><a href="#" class="text-danger delete ">X</a> </div>
             <div class="col-md-3 point"></div></div>
    </div>
   `;
