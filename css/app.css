@@ -1,0 +1,126 @@
+/* html {
+    font-size: 16px !important;
+} */
+
+
+/* .bodi {
+    margin-top: 30px;
+    font-size: calc(100% + 1vw + 1vh);
+} */
+
+
+/* Smartphones */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    html {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* iPads */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    html {
+        font-size: 2.5rem;
+    }
+}
+
+.social-part .fa {
+    padding-right: 50px;
+}
+
+ul li a {
+    margin-right: 20px;
+}
+
+#naver {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.marginn {
+    margin-top: 120px;
+}
+
+.form-group>label {
+    top: 38px;
+    left: 15px;
+    position: relative;
+    background-color: white;
+    padding: 0px 5px 0px 5px;
+    font-size: 1.1em;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+.form-group.label-animate>label {
+    top: 18px !important;
+    left: 16px !important;
+    font-size: 0.9em;
+}
+
+.point {
+    pointer-events: none;
+}
+
+.pointt {
+    pointer-events: auto;
+}
+
+.box {
+    width: 330px;
+    height: auto;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* align-items: space-around; */
+}
+
+.framework {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-device-width: 780px) {
+    /* Styles */
+    .framework {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .box {
+        font-size: 40px;
+        width: 690px;
+        padding: 0;
+        margin-right: 0;
+    }
+    .marginn {
+        margin-top: 220px;
+    }
+}
+
+
+/* Bootstrap */
+
+.bootstrap-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)!important;
+}
+
+.bootstrap {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important
+}
+
+.bootstrap-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175)!important
+}
